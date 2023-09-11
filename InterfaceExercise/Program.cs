@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.ConstrainedExecution;
 
 namespace InterfaceExercise
 {
@@ -79,7 +82,32 @@ namespace InterfaceExercise
             };
 
 
-            //Creatively display and organize their values
+            //done - Creatively display and organize their values
+
+            List<IVehicle> vehicles1 = new List<IVehicle>() {car1, truck1, suv1};
+            List<ICompany> vehicles2 = new List<ICompany>() {car1, truck1, suv1};
+
+            // Alternatively can be added as such:
+            //vehicles.Add(car1);
+            //vehicles.Add(truck1);
+            //vehicles.Add(suv1);
+
+            foreach (IVehicle item in vehicles1)
+            {
+                Console.WriteLine($"{item.NumWheels}wheel, {item.Year}"); //HasTrunk = {item.HasTrunk}, IsConvertible = false is a:");
+                Console.WriteLine($"Make: {item.Make}");
+                Console.WriteLine($"Model: {item.Model}");
+                Console.WriteLine();
+            }
+
+            Console.WriteLine($"-------------------------------");
+
+            foreach (var item in vehicles2)
+            {
+                Console.WriteLine($"Made by: {item.Name}");
+                Console.WriteLine($"Since: {item.FoundingDate}");
+                Console.WriteLine();
+            }
         }
     }
 }

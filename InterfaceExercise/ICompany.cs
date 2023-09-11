@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InterfaceExercise
+namespace InterfaceExercise;
+
+internal interface ICompany
 {
-    internal interface ICompany
-    {
 
-        public int FoundingDate { get; set; }
+    public int FoundingDate { get; set; }
 
-        public string Name { get; set; }
+    public string Name { get; set; }
 
-    }
 }
